@@ -1,0 +1,92 @@
+<svg viewBox="0 0 1400 760" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A5A6E"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="760" fill="#FFFFFF"/>
+
+  <text x="40" y="45" font-size="24" font-weight="bold" fill="#1F3864">Data Request Workflow</text>
+  <text x="40" y="70" font-size="13" fill="#5A5A6E">End-to-end process for requesting access to a governed data asset</text>
+
+  <!-- Swimlanes -->
+  <g font-size="12" font-weight="bold" fill="#1F3864">
+    <rect x="40" y="100" width="200" height="600" fill="#F4F6FC" stroke="#DDE2F0"/>
+    <text x="60" y="125">REQUESTER</text>
+
+    <rect x="240" y="100" width="200" height="600" fill="#FFFFFF" stroke="#DDE2F0"/>
+    <text x="260" y="125">DATA STEWARD</text>
+
+    <rect x="440" y="100" width="200" height="600" fill="#F4F6FC" stroke="#DDE2F0"/>
+    <text x="460" y="125">DATA PRIVACY OFFICER</text>
+
+    <rect x="640" y="100" width="200" height="600" fill="#FFFFFF" stroke="#DDE2F0"/>
+    <text x="660" y="125">IT / ACCESS MGMT</text>
+
+    <rect x="840" y="100" width="200" height="600" fill="#F4F6FC" stroke="#DDE2F0"/>
+    <text x="860" y="125">REQUESTER (OUTCOME)</text>
+  </g>
+
+  <!-- Step boxes -->
+  <g font-size="12" fill="#1F3864">
+    <rect x="60" y="155" width="160" height="60" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="140" y="180" text-anchor="middle">Submit data</text>
+    <text x="140" y="196" text-anchor="middle">access request</text>
+
+    <rect x="260" y="245" width="160" height="60" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="340" y="270" text-anchor="middle">Validate business</text>
+    <text x="340" y="286" text-anchor="middle">justification</text>
+
+    <rect x="460" y="335" width="160" height="70" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="540" y="360" text-anchor="middle">Review for</text>
+    <text x="540" y="376" text-anchor="middle">classification &amp;</text>
+    <text x="540" y="392" text-anchor="middle">privacy risk</text>
+
+    <rect x="260" y="435" width="160" height="60" rx="8" fill="#1F3864"/>
+    <text x="340" y="460" text-anchor="middle" fill="#FFFFFF">Approve / Deny</text>
+    <text x="340" y="476" text-anchor="middle" fill="#CADCFC">with conditions</text>
+
+    <rect x="660" y="525" width="160" height="60" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="740" y="550" text-anchor="middle">Provision access</text>
+    <text x="740" y="566" text-anchor="middle">in source system</text>
+
+    <rect x="860" y="615" width="160" height="60" rx="8" fill="#1F3864"/>
+    <text x="940" y="640" text-anchor="middle" fill="#FFFFFF">Access granted</text>
+    <text x="940" y="656" text-anchor="middle" fill="#CADCFC">+ notification sent</text>
+  </g>
+
+  <!-- Denied branch -->
+  <rect x="60" y="525" width="160" height="60" rx="8" fill="#F4F6FC" stroke="#C0392B"/>
+  <text x="140" y="550" text-anchor="middle" font-size="12" fill="#C0392B">Request denied —</text>
+  <text x="140" y="566" text-anchor="middle" font-size="12" fill="#C0392B">requester notified</text>
+
+  <!-- Arrows -->
+  <path d="M220,185 L260,185 L260,275" fill="none" stroke="#5A5A6E" marker-end="url(#arrow2)"/>
+  <path d="M420,275 L460,275 L460,365" fill="none" stroke="#5A5A6E" marker-end="url(#arrow2)"/>
+  <path d="M460,395 L340,395 L340,435" fill="none" stroke="#5A5A6E" marker-end="url(#arrow2)"/>
+  <path d="M420,460 Q540,500 660,555" fill="none" stroke="#5A5A6E" marker-end="url(#arrow2)"/>
+  <path d="M260,475 Q160,500 140,525" fill="none" stroke="#C0392B" marker-end="url(#arrow2)"/>
+  <path d="M820,555 Q880,590 920,615" fill="none" stroke="#5A5A6E" marker-end="url(#arrow2)"/>
+
+  <text x="345" y="430" font-size="10" fill="#5A5A6E" text-anchor="middle">Approve</text>
+  <text x="195" y="510" font-size="10" fill="#C0392B" text-anchor="middle">Deny</text>
+
+  <!-- SLA box -->
+  <rect x="1080" y="155" width="280" height="180" rx="6" fill="#FFFFFF" stroke="#DDE2F0"/>
+  <text x="1098" y="180" font-size="13" font-weight="bold" fill="#1F3864">Target SLAs</text>
+  <text x="1098" y="205" font-size="11" fill="#5A5A6E">Steward validation: 2 business days</text>
+  <text x="1098" y="227" font-size="11" fill="#5A5A6E">Privacy/classification review: 2 business days</text>
+  <text x="1098" y="249" font-size="11" fill="#5A5A6E">Access provisioning: 1 business day</text>
+  <text x="1098" y="271" font-size="11" fill="#5A5A6E">Total target turnaround: 5 business days</text>
+  <text x="1098" y="300" font-size="11" fill="#5A5A6E" font-style="italic">Restricted classification requests may</text>
+  <text x="1098" y="318" font-size="11" fill="#5A5A6E" font-style="italic">require additional Council approval.</text>
+
+  <rect x="1080" y="360" width="280" height="130" rx="6" fill="#FFFFFF" stroke="#DDE2F0"/>
+  <text x="1098" y="385" font-size="13" font-weight="bold" fill="#1F3864">Legend</text>
+  <rect x="1098" y="398" width="16" height="12" fill="#E8ECFB" stroke="#1F3864"/>
+  <text x="1121" y="408" font-size="10" fill="#5A5A6E">Process step</text>
+  <rect x="1098" y="418" width="16" height="12" fill="#1F3864"/>
+  <text x="1121" y="428" font-size="10" fill="#5A5A6E">Decision / outcome</text>
+  <rect x="1098" y="438" width="16" height="12" fill="#F4F6FC" stroke="#C0392B"/>
+  <text x="1121" y="448" font-size="10" fill="#5A5A6E">Denial path</text>
+</svg>

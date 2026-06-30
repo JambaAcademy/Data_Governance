@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Operational Dashboards — Data Governance Program</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root { --navy: #1E2761; --ice: #CADCFC; --accent: #3F5BD9; --gray: #5A5A6E; --light: #F4F6FC; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; margin: 0; background: #F0F2FA; color: var(--navy); }
+  header { background: var(--navy); color: #fff; padding: 28px 36px; }
+  header .kicker { font-size: 12px; letter-spacing: 2px; color: var(--ice); font-weight: bold; }
+  header h1 { margin: 6px 0 4px 0; font-size: 28px; }
+  header .sub { color: var(--ice); font-size: 13px; }
+  .tabs { display:flex; gap:8px; padding: 16px 36px 0; background: var(--navy); }
+  .tab { padding: 10px 18px; border-radius: 8px 8px 0 0; background: #2A3470; color: var(--ice); font-size: 13px; font-weight: bold; cursor:default; }
+  .tab.active { background: #F0F2FA; color: var(--navy); }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 28px 36px 60px; }
+  .kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 24px; }
+  .kpi-card { background: #fff; border-radius: 10px; padding: 16px; box-shadow: 0 2px 10px rgba(30,39,97,0.08); }
+  .kpi-card .label { font-size: 11px; color: var(--gray); text-transform: uppercase; letter-spacing: .5px; }
+  .kpi-card .value { font-size: 24px; font-weight: bold; color: var(--accent); margin: 4px 0 0; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+  .grid-2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; margin-bottom: 18px; }
+  .panel { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(30,39,97,0.08); }
+  .panel h2 { font-size: 14px; margin: 0 0 14px 0; color: var(--navy); }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  th { text-align: left; background: var(--light); padding: 7px 9px; color: var(--navy); font-size: 11px; }
+  td { padding: 7px 9px; border-bottom: 1px solid #EEF1FA; }
+  .pill { padding: 2px 9px; border-radius: 10px; font-size: 10.5px; font-weight: bold; }
+  .pill.green { background: #C6EFCE; color: #2E7D32; }
+  .pill.yellow { background: #FFEB9C; color: #8a6d00; }
+  .pill.red { background: #FFC7CE; color: #B71C1C; }
+  .note { font-size: 11px; color: var(--gray); margin-top: 28px; border-top: 1px solid #DDE2F0; padding-top: 12px; }
+  canvas { max-height: 240px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">DATA GOVERNANCE PROGRAM</div>
+  <h1>Operational Dashboards</h1>
+  <div class="sub">[Organization Name] — Updated [Insert Date] — For Data Stewards &amp; Governance Office</div>
+</header>
+<div class="tabs">
+  <div class="tab active">Issue Management</div>
+  <div class="tab">Metadata Coverage</div>
+  <div class="tab">SLA Performance</div>
+</div>
+
+<div class="wrap">
+
+  <div class="kpi-row">
+    <div class="kpi-card"><div class="label">Open Issues</div><div class="value">37</div></div>
+    <div class="kpi-card"><div class="label">Avg Resolution (days)</div><div class="value">4.2</div></div>
+    <div class="kpi-card"><div class="label">SLA Compliance</div><div class="value">91%</div></div>
+    <div class="kpi-card"><div class="label">Assets Registered</div><div class="value">612</div></div>
+    <div class="kpi-card"><div class="label">Metadata Completeness</div><div class="value">87%</div></div>
+  </div>
+
+  <div class="grid-3">
+    <div class="panel">
+      <h2>Open Issues by Severity</h2>
+      <canvas id="severityChart"></canvas>
+    </div>
+    <div class="panel">
+      <h2>Issues by Domain</h2>
+      <canvas id="domainChart"></canvas>
+    </div>
+    <div class="panel">
+      <h2>SLA Status by Severity</h2>
+      <canvas id="slaChart"></canvas>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <h2>Metadata Completeness by Domain</h2>
+      <canvas id="metadataChart"></canvas>
+    </div>
+    <div class="panel">
+      <h2>Steward Coverage</h2>
+      <table>
+        <tr><th>Domain</th><th>Stewarded</th><th>Status</th></tr>
+        <tr><td>Customer</td><td>98%</td><td><span class="pill green">On Track</span></td></tr>
+        <tr><td>Financial</td><td>95%</td><td><span class="pill green">On Track</span></td></tr>
+        <tr><td>Operations</td><td>81%</td><td><span class="pill yellow">Gap</span></td></tr>
+        <tr><td>HR</td><td>73%</td><td><span class="pill yellow">Gap</span></td></tr>
+        <tr><td>Product</td><td>62%</td><td><span class="pill red">Action Needed</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Recent Critical / High Issues</h2>
+    <table>
+      <tr><th>Issue ID</th><th>Domain</th><th>Description</th><th>Severity</th><th>Status</th><th>Age (days)</th></tr>
+      <tr><td>ISS-1042</td><td>Customer</td><td>Duplicate records detected post-migration</td><td><span class="pill red">Critical</span></td><td>In Progress</td><td>1</td></tr>
+      <tr><td>ISS-1039</td><td>Financial</td><td>Revenue figure mismatch vs source system</td><td><span class="pill red">Critical</span></td><td>In Progress</td><td>2</td></tr>
+      <tr><td>ISS-1031</td><td>Operations</td><td>Lineage broken after ETL job change</td><td><span class="pill yellow">High</span></td><td>Open</td><td>4</td></tr>
+      <tr><td>ISS-1027</td><td>HR</td><td>PII classification missing on new dataset</td><td><span class="pill yellow">High</span></td><td>Open</td><td>6</td></tr>
+    </table>
+  </div>
+
+  <div class="note">
+    Dashboard template — replace illustrative figures with live values from the catalog views in Compliance_Reporting_Scripts.sql and the Data Issue Resolution Process tracker. Built as an interactive HTML dashboard since a genuine .pbix (Power BI Desktop) file is a proprietary binary format that cannot be generated outside Power BI Desktop — import this data model into Power BI using the Power_BI_Governance.md guide for a native .pbix version.
+  </div>
+</div>
+
+<script>
+new Chart(document.getElementById('severityChart'), {
+  type: 'doughnut',
+  data: { labels:['Critical','High','Medium','Low'], datasets:[{data:[3,9,17,8], backgroundColor:['#E06666','#F6B26B','#FFD966','#93C47D']}] },
+  options: { responsive:true, plugins:{legend:{position:'bottom'}} }
+});
+new Chart(document.getElementById('domainChart'), {
+  type: 'bar',
+  data: { labels:['Customer','Financial','Operations','HR','Product'], datasets:[{label:'Open Issues', data:[9,7,12,4,5], backgroundColor:'#3F5BD9'}] },
+  options: { responsive:true, plugins:{legend:{display:false}} }
+});
+new Chart(document.getElementById('slaChart'), {
+  type: 'bar',
+  data: {
+    labels:['Critical','High','Medium','Low'],
+    datasets: [
+      {label:'Met', data:[2,7,15,8], backgroundColor:'#7FC97F'},
+      {label:'Breached', data:[1,2,2,0], backgroundColor:'#E06666'},
+    ]
+  },
+  options: { responsive:true, plugins:{legend:{position:'bottom'}}, scales:{x:{stacked:true}, y:{stacked:true}} }
+});
+new Chart(document.getElementById('metadataChart'), {
+  type: 'bar',
+  data: {
+    labels:['Customer','Financial','Operations','HR','Product'],
+    datasets:[{label:'Completeness %', data:[96,93,84,82,71], backgroundColor:'#1E2761'}]
+  },
+  options: { responsive:true, indexAxis:'y', plugins:{legend:{display:false}}, scales:{x:{min:0,max:100}} }
+});
+</script>
+</body>
+</html>

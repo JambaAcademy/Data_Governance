@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Executive Dashboard — Data Governance Program</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root {
+    --navy: #1E2761; --ice: #CADCFC; --accent: #3F5BD9; --gray: #5A5A6E; --light: #F4F6FC;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; margin: 0; background: #F0F2FA; color: var(--navy); }
+  header { background: var(--navy); color: #fff; padding: 28px 36px; }
+  header .kicker { font-size: 12px; letter-spacing: 2px; color: var(--ice); font-weight: bold; }
+  header h1 { margin: 6px 0 4px 0; font-size: 28px; }
+  header .sub { color: var(--ice); font-size: 13px; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 28px 36px 60px; }
+  .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 24px; }
+  .kpi-card { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(30,39,97,0.08); }
+  .kpi-card .label { font-size: 12px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
+  .kpi-card .value { font-size: 32px; font-weight: bold; color: var(--accent); margin: 6px 0 2px; }
+  .kpi-card .delta { font-size: 12px; color: #2E8B57; font-weight: bold; }
+  .kpi-card .delta.down { color: #C0392B; }
+  .grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 18px; margin-bottom: 18px; }
+  .panel { background: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(30,39,97,0.08); }
+  .panel h2 { font-size: 15px; margin: 0 0 14px 0; color: var(--navy); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; background: var(--light); padding: 8px 10px; color: var(--navy); font-size: 12px; }
+  td { padding: 8px 10px; border-bottom: 1px solid #EEF1FA; }
+  .pill { padding: 2px 10px; border-radius: 10px; font-size: 11px; font-weight: bold; }
+  .pill.green { background: #C6EFCE; color: #2E7D32; }
+  .pill.yellow { background: #FFEB9C; color: #8a6d00; }
+  .pill.red { background: #FFC7CE; color: #B71C1C; }
+  .note { font-size: 11px; color: var(--gray); margin-top: 28px; border-top: 1px solid #DDE2F0; padding-top: 12px; }
+  canvas { max-height: 280px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">DATA GOVERNANCE PROGRAM</div>
+  <h1>Executive Dashboard</h1>
+  <div class="sub">[Organization Name] — Updated [Insert Date] — Reporting period: Q2 2026</div>
+</header>
+
+<div class="wrap">
+
+  <div class="kpi-row">
+    <div class="kpi-card">
+      <div class="label">Avg. Data Quality Score</div>
+      <div class="value">91.8%</div>
+      <div class="delta">▲ 3.4 pts vs last quarter</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Compliance Status</div>
+      <div class="value">4 / 6</div>
+      <div class="delta">Frameworks fully compliant</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Critical Data Elements Stewarded</div>
+      <div class="value">94%</div>
+      <div class="delta">▲ 6 pts vs last quarter</div>
+    </div>
+    <div class="kpi-card">
+      <div class="label">Open Critical Issues</div>
+      <div class="value">3</div>
+      <div class="delta down">▼ 2 vs last quarter</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <h2>Data Quality Trend by Domain</h2>
+      <canvas id="trendChart"></canvas>
+    </div>
+    <div class="panel">
+      <h2>Compliance Status Distribution</h2>
+      <canvas id="complianceChart"></canvas>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <h2>Issues Opened vs Resolved (Quarterly)</h2>
+      <canvas id="issuesChart"></canvas>
+    </div>
+    <div class="panel">
+      <h2>Top Risk Areas</h2>
+      <table>
+        <tr><th>Risk Area</th><th>Status</th></tr>
+        <tr><td>HIPAA — shadow system PHI classification</td><td><span class="pill red">Critical</span></td></tr>
+        <tr><td>Customer domain quality SLA</td><td><span class="pill yellow">At Risk</span></td></tr>
+        <tr><td>Metadata completeness (12 assets)</td><td><span class="pill yellow">Partial</span></td></tr>
+        <tr><td>GDPR ROPA currency</td><td><span class="pill green">Low</span></td></tr>
+        <tr><td>SOX financial controls</td><td><span class="pill green">Compliant</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Program Milestone Status</h2>
+    <table>
+      <tr><th>Milestone</th><th>Phase</th><th>Status</th><th>Target Date</th></tr>
+      <tr><td>Customer Master Data domain — production rollout</td><td>Rollout</td><td><span class="pill green">Complete</span></td><td>2026-04-15</td></tr>
+      <tr><td>Financial domain — pilot validation</td><td>Pilot</td><td><span class="pill yellow">In Progress</span></td><td>2026-07-01</td></tr>
+      <tr><td>Operations domain — onboarding</td><td>Design</td><td><span class="pill yellow">In Progress</span></td><td>2026-08-15</td></tr>
+      <tr><td>HR domain — onboarding</td><td>Not Started</td><td><span class="pill red">Not Started</span></td><td>2026-10-01</td></tr>
+    </table>
+  </div>
+
+  <div class="note">
+    Dashboard template — replace illustrative figures with live values from your governance platform (Power BI, Collibra, or the catalog views in Compliance_Reporting_Scripts.sql). Built as an interactive HTML dashboard since a genuine .pbix (Power BI Desktop) file is a proprietary binary format that cannot be generated outside Power BI Desktop — import this data model into Power BI using the Power_BI_Governance.md guide for a native .pbix version.
+  </div>
+</div>
+
+<script>
+const navy = '#1E2761', accent = '#3F5BD9', ice = '#CADCFC', gray='#5A5A6E';
+const months = ["2025-07","2025-08","2025-09","2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04","2026-05","2026-06"];
+
+new Chart(document.getElementById('trendChart'), {
+  type: 'line',
+  data: {
+    labels: months,
+    datasets: [
+      {label:'Customer', data:[71.5,73.4,74.3,76.6,80.6,79.9,83.2,83.7,86.3,88.4,91.4,91.8], borderColor:'#3F5BD9', tension:0.3, fill:false},
+      {label:'Financial', data:[77.0,78.2,79.8,82.9,82.6,84.9,86.6,89.0,89.4,91.6,91.9,93.1], borderColor:'#1E2761', tension:0.3, fill:false},
+      {label:'Operations', data:[68.5,70.1,72.0,75.6,77.5,79.4,80.7,82.5,85.7,88.0,88.8,91.6], borderColor:'#7C9CF5', tension:0.3, fill:false},
+    ]
+  },
+  options: { responsive:true, plugins:{legend:{position:'bottom', labels:{boxWidth:12}}}, scales:{y:{min:50,max:100}} }
+});
+
+new Chart(document.getElementById('complianceChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Compliant','Partial','At Risk'],
+    datasets: [{ data: [4,2,1], backgroundColor: ['#7FC97F','#FFD966','#E06666'] }]
+  },
+  options: { responsive:true, plugins:{legend:{position:'bottom'}} }
+});
+
+new Chart(document.getElementById('issuesChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Q3 2025','Q4 2025','Q1 2026','Q2 2026'],
+    datasets: [
+      {label:'Opened', data:[51,49,47,44], backgroundColor:'#CADCFC'},
+      {label:'Resolved', data:[38,45,52,61], backgroundColor:'#3F5BD9'},
+    ]
+  },
+  options: { responsive:true, plugins:{legend:{position:'bottom'}} }
+});
+</script>
+</body>
+</html>
