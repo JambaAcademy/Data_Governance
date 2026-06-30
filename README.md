@@ -1,40 +1,54 @@
 # 📊 Data Governance Framework Repository
 
 [![GitHub stars](https://img.shields.io/github/stars/JambaAcademy/Data_Governance?style=social)](https://github.com/JambaAcademy/Data_Governance)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Contributors Welcome](https://img.shields.io/badge/contributors-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](#-contributing)
 [![Book Available](https://img.shields.io/badge/Book-Available%20on%20Amazon-orange)](https://www.amazon.com/dp/B0FPGF7S8R)
-[![Professional Templates](https://img.shields.io/badge/Templates-$5000%20Value-blue)](https://github.com/JambaAcademy/Data_Governance)
 
-> **The official companion repository for "A Practical Guide to Mastering Data Governance"**  
+> **The official companion repository for *A Practical Guide to Mastering Data Governance***  
 > Transform your data chaos into strategic advantage with proven frameworks and implementation tools.
 
 <div align="center">
-<img src="https://github.com/JambaAcademy/Data_Governance/blob/main/book-mockup.png" alt="Data Governance" width="800" />
+<img src="https://github.com/JambaAcademy/Data_Governance/blob/main/book-mockup.png" alt="A Practical Guide to Mastering Data Governance" width="800" />
 </div>
-
-## 🎯 **About This Repository**
-
-In today's data-driven business landscape, organizations are drowning in information yet starving for actionable insights. This repository provides the complete implementation toolkit for establishing robust data governance that transforms raw data into strategic business assets.
-
-This comprehensive collection contains **over $5,000 worth of professional-grade templates, tools, and frameworks**—available free with the book purchase. Whether you're launching your first governance initiative or refining existing programs, these resources serve as your complete tactical manual.
-
-**📖 Get the Book:** [Available on Amazon](https://www.amazon.com/dp/B0FPGF7S8R)
 
 ---
 
-## 🚀 **Quick Start Guide**
+## 🎯 About This Repository
 
-### Prerequisites
-- Basic understanding of data management concepts
-- Organizational readiness for governance initiatives
-- Access to stakeholder groups and data systems
+In today's data-driven business landscape, organizations are drowning in information yet starving for actionable insights. This repository provides the complete implementation toolkit for establishing robust data governance that transforms raw data into strategic business assets.
 
-### Getting Started
-1. **📋 Start with Assessment**: Use the `02_Assessment_Maturity_Tools` to evaluate your current state
-2. **📝 Define Framework**: Customize templates from `01_Governance_Framework_Templates`
-3. **🚀 Plan Implementation**: Follow roadmaps in `03_Implementation_Resources`
-4. **📊 Measure Success**: Deploy dashboards from `09_Measurement_Reporting`
+This collection contains professional-grade templates, tools, and frameworks — available free alongside the book. Whether you're launching your first governance initiative or refining an existing program, these resources serve as your complete tactical manual.
+
+**📖 Get the Book:** [Available on Amazon](https://www.amazon.com/dp/B0FPGF7S8R)
+
+### How the Book and Repository Work Together
+
+Each chapter of the book introduces key concepts, principles, and real-world context. This repository provides the corresponding ready-to-use artifacts — templates you fill in, scripts you run, and checklists you work through. The two are designed to be used side by side: read the chapter, then open the matching folder to start applying what you learned.
+
+---
+
+## 🚀 Quick Start
+
+### Recommended Reading Order
+
+1. **📋 Assess first** — open `02_Assessment_Maturity_Tools/Readiness Assessment/` to understand your current state before designing anything
+2. **📝 Build the framework** — customize the templates in `01_Governance_Framework_Templates/` to match your organization
+3. **🚀 Plan the rollout** — use `03_Implementation_Resources/` for project charters, roadmaps, and technical setup
+4. **👥 Engage stakeholders** — deploy materials from `04_Training_Communication/` for training and communication
+5. **⚙️ Operate daily** — use `05_Operational_Workflows/` to run governance day-to-day
+6. **📊 Measure value** — track progress with dashboards and reports from `09_Measurement_Reporting/`
+
+### File Format Guide
+
+Each resource section contains files in two formats:
+
+| Format | Purpose | When to Use |
+|--------|---------|-------------|
+| **`.pdf`** | Print-ready, fully formatted reference document | Share with stakeholders, print for workshops, use as a reference baseline |
+| **`.md`** (Markdown) | Plain-text, editable version of the same content | Copy into your wiki, customize in any editor, version-control your changes |
+
+For sections 03–10, additional formats are provided depending on the resource type (`.py`, `.sql`, `.pptx`, `.docx`, `.xlsx`, `.html`, `.svg`).
 
 ```mermaid
 graph TD
@@ -48,304 +62,400 @@ graph TD
 
 ---
 
-## 📂 **Repository Structure**
+## 📂 Repository Structure
+
+> **Note on file pairs:** Sections 01 and 02 contain each resource as both a `.pdf` (formatted, print-ready) and a `.md` (editable Markdown). They are the same content in two formats — use whichever suits your workflow. The `.md` filenames don't follow a single naming convention (most are `snake_case`, a couple retain the original `Title Case` name, e.g. `Data Retention Policy Template.md` and `escalation_procedures_doc.md`) — match files by folder and topic rather than assuming a strict filename pattern.
 
 ```
 Data_Governance/
+│
 ├── 01_Governance_Framework_Templates/
-│   ├── Policy_Documents/
-│   │   ├── 📜 Data_Governance_Charter_Template.docx
-│   │   ├── 👥 Data_Stewardship_Policy.docx
-│   │   ├── ✅ Data_Quality_Standards.docx
-│   │   ├── 🗂️ Data_Classification_Scheme.xlsx
-│   │   ├── 🗓️ Data_Retention_Policy_Template.docx
-│   │   └── 🔒 Data_Privacy_Security_Policy.docx
-│   └── Organizational_Structure/
-│       ├── 📊 RACI_Matrix_Templates.xlsx
-│       ├── 👤 Data_Steward_Job_Descriptions.docx
-│       ├── 🏛️ Data_Governance_Committee_Charter.docx
-│       └── ⚠️ Escalation_Procedures.docx
+│   │
+│   ├── Organizational Structure/            ← Roles, responsibilities, decision rights
+│   │   ├── Data Governance Committee Charter Template.pdf
+│   │   ├── Data Governance Escalation Procedures.pdf
+│   │   ├── Data Steward Job Descriptions.pdf
+│   │   ├── RACI Matrix Templates.pdf
+│   │   ├── data_governance_committee_charter.md
+│   │   ├── escalation_procedures_doc.md
+│   │   ├── data_steward_job_descriptions.md
+│   │   └── raci_matrix_templates.md
+│   │
+│   └── Policy Documents/                    ← Core governance policies and standards
+│       ├── Data Classification Scheme Template.pdf
+│       ├── Data Governance Charter Template.pdf
+│       ├── Data Privacy and Security Policy Template.pdf
+│       ├── Data Quality Standards Template.pdf
+│       ├── Data Retention Policy Template.pdf
+│       ├── Data Retention Policy Template.md
+│       ├── Data Stewardship Policy Template.pdf
+│       ├── data_classification_scheme.md
+│       ├── data_governance_charter.md
+│       ├── data_privacy_security_policy.md
+│       ├── data_quality_standards.md
+│       └── data_stewardship_policy.md
 │
 ├── 02_Assessment_Maturity_Tools/
-│   ├── Readiness_Assessment/
-│   │   ├── 📋 Data_Governance_Maturity_Assessment.xlsx
-│   │   ├── ✔️ Organizational_Readiness_Checklist.docx
-│   │   ├── 🎯 Stakeholder_Analysis_Template.xlsx
-│   │   └── 🔍 Current_State_Assessment_Guide.docx
-│   └── Measurement_Tools/
-│       ├── 📊 KPI_Dashboard_Templates.xlsx
-│       ├── 💰 ROI_Calculation_Spreadsheet.xlsx
-│       ├── 📈 Data_Quality_Scorecards.xlsx
-│       └── ✅ Compliance_Audit_Checklists.docx
+│   │
+│   ├── Readiness Assessment/                ← Evaluate where you are before you start
+│   │   ├── Current State Assessment Guide - Data Landscape Evaluation.pdf
+│   │   ├── Data Governance Maturity Assessment Framework.pdf
+│   │   ├── Organizational Readiness Checklist Template.pdf
+│   │   ├── Stakeholder Analysis Template - Influence Mapping and Engagement Strategies.pdf
+│   │   ├── current_state_assessment_guide.md
+│   │   ├── data_governance_maturity_assessment.md
+│   │   ├── organizational_readiness_checklist.md
+│   │   └── stakeholder_analysis_template.md
+│   │
+│   └── Measurement Tools/                   ← Track KPIs and quantify ROI
+│       ├── KPI Dashboard Templates - Governance Performance Metrics Tracking.pdf
+│       ├── ROI Calculation Spreadsheet - Business Value Measurement Framework.pdf
+│       ├── kpi_dashboard_templates.md
+│       └── roi_calculation_framework.md
 │
-├── 03_Implementation_Resources/
-│   ├── Project_Management/
-│   │   ├── 🗺️ Implementation_Roadmap_Template.xlsx
-│   │   ├── 📋 Project_Charter_Template.docx
-│   │   ├── 🔄 Change_Management_Toolkit.pptx
-│   │   └── ⚠️ Risk_Assessment_Matrix.xlsx
-│   └── Technical_Implementation/
-│       ├── 🗃️ Data_Catalog_Setup_Scripts.sql
-│       ├── 🔗 Data_Lineage_Mapping_Templates.xlsx
-│       ├── 🐍 Data_Quality_Rules_Library.py
-│       └── 🏗️ Integration_Architecture_Diagrams.vsdx
+├── 03_Implementation_Resources/             ← Project management and technical setup
+│   ├── Project_Charter_Template.pdf
+│   ├── Project_Charter_Template.docx
+│   ├── Project_Charter_Template.md
+│   ├── Change_Management_Toolkit.pptx
+│   ├── Implementation_Roadmap_Template.xlsx
+│   ├── Risk_Assessment_Matrix.xlsx
+│   ├── Data_Lineage_Mapping_Templates.xlsx
+│   ├── Data_Catalog_Setup_Scripts.sql
+│   ├── Data_Quality_Rules_Library.py
+│   ├── Integration_Architecture_Diagram.svg
+│   └── Integration_Architecture_Diagram.png
 │
-├── 04_Training_Communication/
-│   ├── Educational_Content/
-│   │   ├── 👔 Executive_Briefing_Presentation.pptx
-│   │   ├── 🎓 Data_Steward_Training_Curriculum.pptx
-│   │   ├── 📚 End_User_Awareness_Materials.docx
-│   │   └── 🔖 Quick_Reference_Cards.pdf
-│   └── Communication_Templates/
-│       ├── 📢 Stakeholder_Communication_Plan.docx
-│       ├── 📰 Newsletter_Templates.docx
-│       ├── 🏆 Success_Story_Templates.docx
-│       └── ❓ FAQ_Document.docx
+├── 04_Training_Communication/               ← Training materials and comms templates
+│   ├── Executive_Briefing_Presentation.pptx
+│   ├── Data_Steward_Training_Curriculum.pptx
+│   ├── Stakeholder_Communication_Plan.docx
+│   ├── End_User_Awareness_Materials.docx
+│   ├── End_User_Awareness_Materials.pdf
+│   ├── Quick_Reference_Cards.docx
+│   ├── Quick_Reference_Cards.pdf
+│   ├── Newsletter_Templates.docx
+│   ├── Success_Story_Templates.docx
+│   └── FAQ_Document.docx
 │
-├── 05_Operational_Workflows/
-│   ├── Process_Documentation/
-│   │   ├── 📝 Data_Request_Workflow.vsdx
-│   │   ├── 🔧 Data_Issue_Resolution_Process.docx
-│   │   ├── 🚨 Data_Quality_Incident_Response.docx
-│   │   └── 📖 Metadata_Management_Procedures.docx
-│   └── Automation_Scripts/
-│       ├── 🔍 Data_Profiling_Scripts.py
-│       ├── 📊 Metadata_Extraction_Tools.py
-│       ├── 📋 Compliance_Reporting_Scripts.sql
-│       └── 🔗 Data_Lineage_Discovery_Tools.py
+├── 05_Operational_Workflows/                ← Day-to-day processes and automation scripts
+│   ├── Data_Issue_Resolution_Process.docx
+│   ├── Data_Quality_Incident_Response.docx
+│   ├── Metadata_Management_Procedures.docx
+│   ├── Data_Request_Workflow.svg
+│   ├── Data_Request_Workflow.png
+│   ├── Data_Profiling_Scripts.py
+│   ├── Metadata_Extraction_Tools.py
+│   ├── Compliance_Reporting_Scripts.sql
+│   └── Data_Lineage_Discovery_Tools.py
 │
-├── 06_Case_Study_Materials/
-│   ├── Industry_Examples/
-│   │   ├── 🏦 Financial_Services_Implementation.pdf
-│   │   ├── 🏥 Healthcare_Data_Governance.pdf
-│   │   ├── 🏭 Manufacturing_Use_Case.pdf
-│   │   └── 🛍️ Retail_Implementation.pdf
-│   └── Lessons_Learned/
-│       ├── ⚠️ Common_Implementation_Pitfalls.docx
-│       ├── 🎯 Success_Factor_Analysis.docx
-│       ├── 🛒 Vendor_Selection_Criteria.xlsx
-│       └── 📊 Post_Implementation_Reviews.docx
+├── 06_Case_Study_Materials/                 ← Real-world implementations and lessons learned
+│   ├── Financial_Services_Implementation.pdf
+│   ├── Healthcare_Data_Governance.pdf
+│   ├── Manufacturing_Use_Case.pdf
+│   ├── Retail_Implementation.pdf
+│   ├── Common_Implementation_Pitfalls.docx
+│   ├── Success_Factor_Analysis.docx
+│   ├── Post_Implementation_Reviews.docx
+│   └── Vendor_Selection_Criteria.xlsx
 │
-├── 07_Compliance_Legal_Resources/
-│   ├── Regulatory_Templates/
-│   │   ├── 🇪🇺 GDPR_Compliance_Checklist.docx
-│   │   ├── 🇺🇸 CCPA_Implementation_Guide.docx
-│   │   ├── 📊 SOX_Data_Controls.xlsx
-│   │   └── 🏥 HIPAA_Data_Handling.docx
-│   └── Legal_Documentation/
-│       ├── 📋 Data_Processing_Agreements.docx
-│       ├── 👤 Data_Subject_Request_Procedures.docx
-│       ├── 🚨 Breach_Notification_Templates.docx
-│       └── ✅ Vendor_Due_Diligence_Checklist.xlsx
+├── 07_Compliance_Legal_Resources/           ← GDPR, CCPA, HIPAA, SOX compliance templates
+│   ├── GDPR_Compliance_Checklist.docx
+│   ├── CCPA_Implementation_Guide.docx
+│   ├── HIPAA_Data_Handling.docx
+│   ├── Data_Processing_Agreements.docx
+│   ├── Data_Subject_Request_Procedures.docx
+│   ├── Breach_Notification_Templates.docx
+│   ├── Vendor_Due_Diligence_Checklist.xlsx
+│   └── SOX_Data_Controls.xlsx
 │
-├── 08_Technology_Integration_Guides/
-│   ├── Platform_Configurations/
-│   │   ├── 🔗 Collibra_Setup_Guide.pdf
-│   │   ├── 🛠️ Informatica_Implementation.pdf
-│   │   ├── 🔄 Talend_Configuration.pdf
-│   │   └── 📊 Power_BI_Governance.pdf
-│   └── API_Documentation/
-│       ├── ⚙️ Governance_API_Examples.py
-│       ├── 📊 Metadata_API_Integration.py
-│       ├── ✅ Quality_API_Implementation.py
-│       └── 🔗 Lineage_API_Usage.py
+├── 08_Technology_Integration_Guides/        ← Platform setup guides and API code examples
+│   ├── Collibra_Setup_Guide.pdf
+│   ├── Informatica_Implementation.pdf
+│   ├── Talend_Configuration.pdf
+│   ├── Power_BI_Governance.pdf
+│   ├── Governance_API_Examples.py
+│   ├── Metadata_API_Integration.py
+│   ├── Quality_API_Implementation.py
+│   └── Lineage_API_Usage.py
 │
-├── 09_Measurement_Reporting/
-│   ├── Dashboard_Templates/
-│   │   ├── 👔 Executive_Dashboard.pbix
-│   │   ├── ⚙️ Operational_Dashboards.pbix
-│   │   ├── 📈 Quality_Trend_Analysis.xlsx
-│   │   └── ✅ Compliance_Status_Reports.xlsx
-│   └── Reporting_Frameworks/
-│       ├── 📅 Monthly_Governance_Report_Template.docx
-│       ├── 📊 Quarterly_Business_Review_Format.pptx
-│       ├── 📋 Annual_Governance_Assessment.xlsx
-│       └── 🏛️ Board_Reporting_Template.pptx
+├── 09_Measurement_Reporting/                ← Dashboards, scorecards, and report templates
+│   ├── Executive_Dashboard.html
+│   ├── Operational_Dashboards.html
+│   ├── Quality_Trend_Analysis.xlsx
+│   ├── Compliance_Status_Reports.xlsx
+│   ├── Monthly_Governance_Report_Template.docx
+│   ├── Quarterly_Business_Review_Format.pptx
+│   ├── Annual_Governance_Assessment.xlsx
+│   └── Board_Reporting_Template.pptx
 │
-└── 10_Quick_Start_Guides/
-    ├── 30_60_90_Day_Plans/
-    │   ├── 🚀 First_30_Days_Checklist.docx
-    │   ├── 🏗️ 60_Day_Implementation_Milestones.docx
-    │   └── 🎯 90_Day_Success_Metrics.xlsx
-    └── Role_Specific_Guides/
-        ├── 👔 CDO_Quick_Start_Guide.pdf
-        ├── 👥 Data_Steward_Onboarding.docx
-        ├── 💻 IT_Leader_Implementation.pdf
-        └── 🤝 Business_Leader_Engagement.docx
+├── 10_Quick_Start_Guides/                   ← Role-specific and time-boxed onboarding guides
+│   ├── First_30_Days_Checklist.docx
+│   ├── 60_Day_Implementation_Milestones.docx
+│   ├── 90_Day_Success_Metrics.xlsx
+│   ├── CDO_Quick_Start_Guide.docx
+│   ├── Data_Steward_Onboarding.docx
+│   ├── IT_Leader_Implementation.docx
+│   └── Business_Leader_Engagement.docx
+│
+├── book-mockup.png
+├── LICENSE
+└── README.md
 ```
 
-### 📁 **Folder Breakdown**
+---
 
-| Folder | Purpose | Key Resources | File Count |
-|--------|---------|---------------|------------|
-| **01_Framework_Templates** | Foundation policies & org structure | Charters, policies, RACI matrices | 10 files |
-| **02_Assessment_Tools** | Maturity evaluation & measurement | Excel assessments, KPI dashboards | 8 files |
-| **03_Implementation** | Project management & technical setup | Roadmaps, scripts, architecture | 8 files |
-| **04_Training_Communication** | Education & stakeholder engagement | Presentations, curricula, FAQs | 8 files |
-| **05_Operational_Workflows** | Day-to-day processes & automation | Workflows, Python/SQL scripts | 8 files |
-| **06_Case_Studies** | Real-world examples & lessons learned | Industry implementations, pitfalls | 8 files |
-| **07_Compliance_Legal** | Regulatory frameworks & legal docs | GDPR, CCPA, SOX, HIPAA templates | 8 files |
-| **08_Technology_Integration** | Platform setup & API integration | Collibra, Informatica, Talend guides | 8 files |
-| **09_Measurement_Reporting** | Performance tracking & communication | Dashboards, reports, assessments | 8 files |
-| **10_Quick_Start** | Rapid deployment guides | 30-60-90 day plans, role guides | 7 files |
+## 📁 Section-by-Section Reference
 
-**Total Resources:** 81 professional-grade templates and tools
+### 01 — Governance Framework Templates
+
+> **Book chapters:** 2, 3, 5 | **When to use:** During framework design, before implementation begins
+
+This section contains the foundational documents that define *what* your governance program is and *who* is responsible for it. Start here after completing the assessments in section 02.
+
+#### `Organizational Structure/`
+
+| File | What It Provides |
+|------|-----------------|
+| `Data Governance Committee Charter Template` | Formal mandate for the governing body — purpose, scope, membership criteria, meeting cadence, quorum rules, and voting procedures |
+| `RACI Matrix Templates` | Pre-built responsibility assignment matrices for common governance processes (data quality, access requests, policy exceptions, incident response) |
+| `Data Steward Job Descriptions` | Role profiles for Data Steward, Data Owner, Data Custodian, and Chief Data Officer — includes key responsibilities, required skills, and success metrics |
+| `Data Governance Escalation Procedures` | Decision escalation paths from operational data issues up through the governance committee to executive sponsors |
+
+Each file is available as a `.pdf` (formatted reference) and a `.md` (editable version for your wiki or internal docs).
+
+#### `Policy Documents/`
+
+| File | What It Provides |
+|------|-----------------|
+| `Data Governance Charter Template` | The top-level governance charter — organizational commitment, guiding principles, program scope, and authority |
+| `Data Stewardship Policy Template` | Defines steward roles, obligations, nomination process, and accountability mechanisms |
+| `Data Quality Standards Template` | Measurable quality dimensions (completeness, accuracy, timeliness, consistency) with threshold definitions and remediation triggers |
+| `Data Classification Scheme Template` | Sensitivity tiers (Public / Internal / Confidential / Restricted), classification criteria, and handling requirements per tier |
+| `Data Retention Policy Template` | Retention schedules by data category, legal hold procedures, and secure disposal requirements |
+| `Data Privacy and Security Policy Template` | Privacy-by-design principles, data minimization rules, access controls, and security baselines aligned to GDPR/CCPA |
 
 ---
 
-## 📘 **Book & Chapter Overview**
+### 02 — Assessment & Maturity Tools
 
-### **Chapter 1: The Data Governance Imperative** 🎯
-**What it covers:** Understanding the business case for data governance, quantifying data quality costs, and establishing organizational readiness.
+> **Book chapters:** 1, 4, 11 | **When to use:** Before starting (baseline) and repeatedly to track progress
 
-**Repository Support:** 
-- `02_Assessment_Maturity_Tools/Readiness_Assessment/` - Current state evaluation tools
-- `10_Quick_Start_Guides/30-60-90_Day_Plans/` - Initial establishment checklists
+Use this section to establish your starting point before designing anything, and return to it quarterly to measure improvement.
 
-### **Chapter 2: Foundations of Data Governance** 🏗️
-**What it covers:** Core principles, governance models, and essential components of effective data stewardship frameworks.
+#### `Readiness Assessment/`
 
-**Repository Support:**
-- `01_Governance_Framework_Templates/Policy_Documents/` - Foundational policy templates
-- `06_Case_Study_Materials/Industry_Examples/` - Real-world foundation examples
+| File | What It Provides |
+|------|-----------------|
+| `Data Governance Maturity Assessment Framework` | Five-level maturity model (Initial → Managed → Defined → Quantified → Optimized) with scoring criteria across 8 governance domains |
+| `Organizational Readiness Checklist Template` | 60-point checklist covering executive sponsorship, cultural readiness, technical infrastructure, budget, and data literacy |
+| `Current State Assessment Guide - Data Landscape Evaluation` | Guided process for inventorying existing data assets, tools, policies, and pain points — produces the baseline for your roadmap |
+| `Stakeholder Analysis Template - Influence Mapping and Engagement Strategies` | Influence/interest grid for mapping stakeholders, identifying champions and resistors, and planning engagement strategies |
 
-### **Chapter 3: Designing Your Governance Framework** 📐
-**What it covers:** Creating customized governance structures, defining roles and responsibilities, and establishing decision-making processes.
+#### `Measurement Tools/`
 
-**Repository Support:**
-- `01_Governance_Framework_Templates/Organizational_Structure/` - RACI matrices and role definitions
-- `03_Implementation_Resources/Project_Management/` - Framework design templates
-
-### **Chapter 4: Stakeholder Engagement and Organizational Alignment** 🤝
-**What it covers:** Building consensus, managing change resistance, and creating governance buy-in across organizational levels.
-
-**Repository Support:**
-- `02_Assessment_Maturity_Tools/Stakeholder_Analysis_Template.xlsx` - Influence mapping tools
-- `04_Training_Communication/Communication_Templates/` - Engagement strategies
-
-### **Chapter 5: Data Classification and Information Architecture** 🗂️
-**What it covers:** Developing data classification schemes, sensitivity levels, and architectural frameworks for governance.
-
-**Repository Support:**
-- `01_Governance_Framework_Templates/Data_Classification_Scheme.xlsx` - Classification frameworks
-- `05_Operational_Workflows/Metadata_Management_Procedures/` - Architecture documentation
-
-### **Chapter 6: Establishing Data Quality Standards** ✅
-**What it covers:** Defining quality metrics, implementing validation rules, and creating quality monitoring systems.
-
-**Repository Support:**
-- `03_Implementation_Resources/Data_Quality_Rules_Library.py` - Validation rule implementations
-- `09_Measurement_Reporting/Quality_Trend_Analysis/` - Quality monitoring dashboards
-
-### **Chapter 7: Privacy, Security, and Risk Management** 🔒
-**What it covers:** Compliance frameworks (GDPR, CCPA, HIPAA), risk assessment methodologies, and security governance integration.
-
-**Repository Support:**
-- `07_Compliance_Legal_Resources/Regulatory_Templates/` - Complete compliance frameworks
-- `03_Implementation_Resources/Risk_Assessment_Matrix.xlsx` - Risk evaluation tools
-
-### **Chapter 8: Technology Infrastructure and Tool Selection** 🛠️
-**What it covers:** Evaluating governance platforms, integration strategies, and technology architecture decisions.
-
-**Repository Support:**
-- `08_Technology_Integration_Guides/Platform_Configurations/` - Setup guides for major platforms
-- `08_Technology_Integration_Guides/API_Documentation/` - Integration examples
-
-### **Chapter 9: Implementation Strategy and Deployment** 🚀
-**What it covers:** Phase-based deployment approaches, change management, and minimizing organizational disruption.
-
-**Repository Support:**
-- `03_Implementation_Resources/Implementation_Roadmap_Template.xlsx` - Deployment timelines
-- `04_Training_Communication/Educational_Content/` - Training materials
-
-### **Chapter 10: Operationalizing Data Governance** ⚙️
-**What it covers:** Day-to-day governance operations, workflow automation, and process optimization.
-
-**Repository Support:**
-- `05_Operational_Workflows/Process_Documentation/` - Operational procedures
-- `05_Operational_Workflows/Automation_Scripts/` - Workflow automation tools
-
-### **Chapter 11: Measuring Success and Demonstrating Value** 📈
-**What it covers:** KPI frameworks, ROI calculation, and communicating governance value to stakeholders.
-
-**Repository Support:**
-- `09_Measurement_Reporting/Dashboard_Templates/` - Performance monitoring dashboards
-- `02_Assessment_Maturity_Tools/ROI_Calculation_Spreadsheet.xlsx` - Value measurement tools
-
-### **Chapter 12: Sustaining Momentum & Continuous Improvement** 🔄
-**What it covers:** Long-term sustainability strategies, program evolution, and maintaining organizational engagement.
-
-**Repository Support:**
-- `06_Case_Study_Materials/Post_Implementation_Reviews/` - Improvement insights
-- `09_Measurement_Reporting/Annual_Governance_Assessment/` - Program evaluation tools
-
-### **Chapter 13: Advanced Governance Strategies** 🎯
-**What it covers:** Emerging practices, AI/ML governance integration, and scaling governance across complex enterprises.
-
-**Repository Support:**
-- `08_Technology_Integration_Guides/API_Documentation/` - Advanced integration patterns
-- `06_Case_Study_Materials/Success_Factor_Analysis/` - Advanced implementation strategies
-
-### **Chapter 14: The Future of Data Governance** 🔮
-**What it covers:** Emerging trends, technological evolution, and preparing governance frameworks for future challenges.
-
-**Repository Support:**
-- Regular repository updates reflecting emerging best practices
-- Community contributions for evolving governance patterns
+| File | What It Provides |
+|------|-----------------|
+| `KPI Dashboard Templates - Governance Performance Metrics Tracking` | Pre-defined KPIs across four categories: data quality, compliance, operational efficiency, and business value — with target ranges and data source guidance |
+| `ROI Calculation Spreadsheet - Business Value Measurement Framework` | Structured model for quantifying governance ROI: cost avoidance, productivity gains, risk reduction, and revenue enablement |
 
 ---
 
-## 🛠️ **How to Run the Code Examples**
+### 03 — Implementation Resources
 
-### **Environment Setup**
+> **Book chapters:** 8, 9 | **When to use:** During planning and technical deployment phases
+
+| File | Format | What It Provides |
+|------|--------|-----------------|
+| `Project_Charter_Template` | `.pdf` / `.docx` / `.md` | Governance program charter — scope, objectives, sponsor, budget, milestones |
+| `Change_Management_Toolkit` | `.pptx` | Slide deck and framework for managing organizational change during rollout |
+| `Implementation_Roadmap_Template` | `.xlsx` | Phased timeline with milestones, dependencies, and resource allocation |
+| `Risk_Assessment_Matrix` | `.xlsx` | Risk register with likelihood/impact scoring and mitigation strategies |
+| `Data_Lineage_Mapping_Templates` | `.xlsx` | Templates for documenting data flows between systems |
+| `Data_Catalog_Setup_Scripts` | `.sql` | DDL and seed data scripts to bootstrap a metadata catalog schema |
+| `Data_Quality_Rules_Library` | `.py` | Reusable Python functions for common data quality checks (null rates, range validation, referential integrity, format conformance) |
+| `Integration_Architecture_Diagram` | `.svg` / `.png` | Reference architecture showing how governance tools connect to source systems, catalogs, and BI layers |
+
+---
+
+### 04 — Training & Communication
+
+> **Book chapters:** 4, 9 | **When to use:** During rollout and ongoing program communication
+
+| File | Format | What It Provides |
+|------|--------|-----------------|
+| `Executive_Briefing_Presentation` | `.pptx` | 15-slide deck for securing executive sponsorship — business case, ROI, risk framing |
+| `Data_Steward_Training_Curriculum` | `.pptx` | Full training program for newly appointed data stewards — roles, tools, workflows |
+| `Stakeholder_Communication_Plan` | `.docx` | Communication calendar, message templates, and channel strategy by audience |
+| `End_User_Awareness_Materials` | `.docx` / `.pdf` | Awareness campaign content explaining data governance to all employees |
+| `Quick_Reference_Cards` | `.docx` / `.pdf` | One-page role-specific cheat sheets for daily governance activities |
+| `Newsletter_Templates` | `.docx` | Monthly governance newsletter templates to sustain awareness |
+| `Success_Story_Templates` | `.docx` | Structured format for capturing and sharing governance wins internally |
+| `FAQ_Document` | `.docx` | Pre-answered frequently asked questions for common objections and queries |
+
+---
+
+### 05 — Operational Workflows
+
+> **Book chapters:** 10 | **When to use:** Once governance is live — daily operations
+
+| File | Format | What It Provides |
+|------|--------|-----------------|
+| `Data_Issue_Resolution_Process` | `.docx` | End-to-end workflow for reporting, triaging, and resolving data quality issues |
+| `Data_Quality_Incident_Response` | `.docx` | Incident response playbook for critical data quality failures |
+| `Metadata_Management_Procedures` | `.docx` | Procedures for creating, reviewing, and maintaining metadata in the catalog |
+| `Data_Request_Workflow` | `.svg` / `.png` | Visual flowchart of the end-to-end data access request and approval process |
+| `Data_Profiling_Scripts` | `.py` | Python scripts to automatically profile datasets and surface quality metrics |
+| `Metadata_Extraction_Tools` | `.py` | Scripts to extract and load metadata from common data sources into a catalog |
+| `Compliance_Reporting_Scripts` | `.sql` | SQL queries for generating regulatory compliance reports |
+| `Data_Lineage_Discovery_Tools` | `.py` | Python tools to trace and document data lineage across pipelines |
+
+---
+
+### 06 — Case Study Materials
+
+> **Book chapters:** Throughout | **When to use:** For benchmarking and learning from others' experiences
+
+| File | Format | What It Provides |
+|------|--------|-----------------|
+| `Financial_Services_Implementation` | `.pdf` | Full implementation case study from a financial services organization |
+| `Healthcare_Data_Governance` | `.pdf` | Healthcare-specific governance case study with HIPAA compliance focus |
+| `Manufacturing_Use_Case` | `.pdf` | Manufacturing sector implementation with supply-chain data focus |
+| `Retail_Implementation` | `.pdf` | Retail governance case study covering customer and inventory data |
+| `Common_Implementation_Pitfalls` | `.docx` | Documented failure patterns and how to avoid them |
+| `Success_Factor_Analysis` | `.docx` | Analysis of factors that distinguish successful implementations |
+| `Post_Implementation_Reviews` | `.docx` | Templates and guidance for conducting post-rollout reviews |
+| `Vendor_Selection_Criteria` | `.xlsx` | Weighted scoring model for evaluating governance platform vendors |
+
+---
+
+### 07 — Compliance & Legal Resources
+
+> **Book chapters:** 7 | **When to use:** When addressing regulatory requirements
+
+| File | Format | What It Provides |
+|------|--------|-----------------|
+| `GDPR_Compliance_Checklist` | `.docx` | Article-by-article GDPR compliance checklist mapped to governance controls |
+| `CCPA_Implementation_Guide` | `.docx` | California Consumer Privacy Act implementation guide and controls |
+| `HIPAA_Data_Handling` | `.docx` | HIPAA data handling requirements and governance control mapping |
+| `Data_Processing_Agreements` | `.docx` | Template DPA for use with third-party data processors |
+| `Data_Subject_Request_Procedures` | `.docx` | Procedures for handling DSAR (access, erasure, portability requests) |
+| `Breach_Notification_Templates` | `.docx` | Notification templates and response playbook for data breaches |
+| `SOX_Data_Controls` | `.xlsx` | Sarbanes-Oxley data controls matrix for financial data governance |
+| `Vendor_Due_Diligence_Checklist` | `.xlsx` | Due diligence checklist for assessing third-party data handling practices |
+
+---
+
+### 08 — Technology Integration Guides
+
+> **Book chapters:** 8 | **When to use:** During platform selection and technical integration
+
+| File | Format | What It Provides |
+|------|--------|-----------------|
+| `Collibra_Setup_Guide` | `.pdf` | Step-by-step setup guide for Collibra Data Intelligence Cloud |
+| `Informatica_Implementation` | `.pdf` | Implementation guide for Informatica Intelligent Data Management Cloud |
+| `Talend_Configuration` | `.pdf` | Configuration guide for Talend Data Fabric governance features |
+| `Power_BI_Governance` | `.pdf` | Governance controls and best practices for Power BI deployments |
+| `Governance_API_Examples` | `.py` | Python examples for common governance platform API operations |
+| `Metadata_API_Integration` | `.py` | Code for integrating metadata between systems via API |
+| `Quality_API_Implementation` | `.py` | API-driven data quality rule management examples |
+| `Lineage_API_Usage` | `.py` | Code examples for publishing and querying lineage via API |
+
+---
+
+### 09 — Measurement & Reporting
+
+> **Book chapters:** 11 | **When to use:** Ongoing — from month 1 onwards
+
+| File | Format | What It Provides |
+|------|--------|-----------------|
+| `Executive_Dashboard` | `.html` | Browser-viewable executive governance scorecard |
+| `Operational_Dashboards` | `.html` | Browser-viewable operational metrics dashboard for governance teams |
+| `Quality_Trend_Analysis` | `.xlsx` | Spreadsheet model for tracking data quality metrics over time |
+| `Compliance_Status_Reports` | `.xlsx` | Compliance posture tracking across regulatory frameworks |
+| `Monthly_Governance_Report_Template` | `.docx` | Template for monthly governance status reports |
+| `Quarterly_Business_Review_Format` | `.pptx` | QBR slide deck template for presenting governance value to leadership |
+| `Annual_Governance_Assessment` | `.xlsx` | Annual program health assessment across all governance domains |
+| `Board_Reporting_Template` | `.pptx` | Board-level governance reporting template focused on risk and value |
+
+---
+
+### 10 — Quick Start Guides
+
+> **Book chapters:** All | **When to use:** Day one — immediately orient yourself and your team
+
+| File | Format | What It Provides |
+|------|--------|-----------------|
+| `First_30_Days_Checklist` | `.docx` | Prioritized checklist for the first 30 days of a governance initiative |
+| `60_Day_Implementation_Milestones` | `.docx` | Milestones and checkpoints for the 31–60 day window |
+| `90_Day_Success_Metrics` | `.xlsx` | Success metrics and targets for the first 90-day program review |
+| `CDO_Quick_Start_Guide` | `.docx` | Orientation guide tailored for Chief Data Officers |
+| `Data_Steward_Onboarding` | `.docx` | Step-by-step onboarding guide for newly appointed data stewards |
+| `IT_Leader_Implementation` | `.docx` | Technical implementation guide for IT leaders |
+| `Business_Leader_Engagement` | `.docx` | Engagement guide for business unit leaders and domain owners |
+
+---
+
+## 📘 Book Chapter → Repository Mapping
+
+| Chapter | Title | Primary Repository Sections |
+|---------|-------|----------------------------|
+| 1 | The Data Governance Imperative | `02/Readiness Assessment/`, `10/` |
+| 2 | Foundations of Data Governance | `01/Policy Documents/`, `06/` |
+| 3 | Designing Your Governance Framework | `01/Organizational Structure/`, `01/Policy Documents/` |
+| 4 | Stakeholder Engagement and Organizational Alignment | `02/Readiness Assessment/stakeholder_analysis_template`, `04/` |
+| 5 | Data Classification and Information Architecture | `01/Policy Documents/data_classification_scheme`, `05/Metadata_Management_Procedures` |
+| 6 | Establishing Data Quality Standards | `01/Policy Documents/data_quality_standards`, `03/Data_Quality_Rules_Library.py`, `05/` |
+| 7 | Privacy, Security, and Risk Management | `07/`, `03/Risk_Assessment_Matrix.xlsx` |
+| 8 | Technology Infrastructure and Tool Selection | `08/`, `06/Vendor_Selection_Criteria.xlsx` |
+| 9 | Implementation Strategy and Deployment | `03/`, `04/` |
+| 10 | Operationalizing Data Governance | `05/` |
+| 11 | Measuring Success and Demonstrating Value | `09/`, `02/Measurement Tools/` |
+| 12 | Sustaining Momentum & Continuous Improvement | `06/Post_Implementation_Reviews`, `09/Annual_Governance_Assessment` |
+| 13 | Advanced Governance Strategies | `08/` (API examples), `06/Success_Factor_Analysis` |
+| 14 | The Future of Data Governance | Community contributions, repository updates |
+
+---
+
+## 🛠️ Running the Code Examples
+
+### Python Scripts (sections 03, 05, 08)
+
 ```bash
 # Clone the repository
 git clone https://github.com/JambaAcademy/Data_Governance.git
 cd Data_Governance
 
-# Python Requirements (for automation scripts)
+# Install Python dependencies
 pip install pandas numpy sqlalchemy openpyxl matplotlib seaborn
 
-# SQL Requirements
-# Compatible with PostgreSQL, SQL Server, Oracle, MySQL
+# Example: run data profiling on a CSV file
+python 05_Operational_Workflows/Data_Profiling_Scripts.py --input your_data.csv
+
+# Example: extract metadata from a database
+python 05_Operational_Workflows/Metadata_Extraction_Tools.py --connection "postgresql://user:pass@host/db"
 ```
 
-### **File Type Distribution**
-```mermaid
-pie title Repository File Types
-    "Excel Templates" : 35
-    "Word Documents" : 25
-    "Python Scripts" : 12
-    "SQL Scripts" : 8
-    "PowerPoint" : 8
-    "PDF Guides" : 6
-    "Visio Diagrams" : 4
-    "Power BI Files" : 3
+### SQL Scripts (sections 03, 05)
+
+The SQL scripts are written to be compatible with PostgreSQL, SQL Server, Oracle, and MySQL. Check the comment header in each file for any dialect-specific notes.
+
+```bash
+# Example: initialize the data catalog schema
+psql -U your_user -d your_db -f 03_Implementation_Resources/Data_Catalog_Setup_Scripts.sql
+
+# Example: run compliance report
+psql -U your_user -d your_db -f 05_Operational_Workflows/Compliance_Reporting_Scripts.sql
 ```
 
-### **Implementation Journey Map**
-```mermaid
-journey
-    title Data Governance Implementation Journey
-    section Assessment Phase
-      Current State Evaluation    : 3: User
-      Stakeholder Analysis       : 4: User
-      Maturity Assessment        : 5: User
-    section Design Phase
-      Framework Design          : 4: User
-      Policy Development        : 5: User
-      Role Definition          : 4: User
-    section Implementation Phase
-      Pilot Deployment         : 3: User
-      Training Rollout         : 4: User
-      Full Implementation      : 5: User
-    section Sustaining Phase
-      Performance Monitoring   : 5: User
-      Continuous Improvement   : 4: User
-      Program Evolution        : 5: User
-```
+### HTML Dashboards (section 09)
 
-### **Data Governance Architecture Overview**
+The `Executive_Dashboard.html` and `Operational_Dashboards.html` files open directly in any modern browser — no server required. Update the data values in the embedded JavaScript to reflect your organization's metrics.
+
+---
+
+## 🔄 Implementation Architecture
+
 ```mermaid
 graph TB
     subgraph "🏛️ Governance Layer"
@@ -353,245 +463,86 @@ graph TB
         B[👥 Roles & Responsibilities]
         C[⚖️ Decision Rights]
     end
-    
+
     subgraph "🔧 Implementation Layer"
         D[🛠️ Tools & Technology]
         E[📋 Processes & Workflows]
         F[📊 Metrics & Monitoring]
     end
-    
+
     subgraph "💼 Business Layer"
         G[🎯 Strategic Objectives]
         H[📈 Value Realization]
         I[✅ Compliance Requirements]
     end
-    
+
     A --> D
     B --> E
     C --> F
     D --> G
     E --> H
     F --> I
-    
-    style A fill:#e3f2fd
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style F fill:#f1f8e9
-    style G fill:#e0f2f1
-    style H fill:#fef7e0
-    style I fill:#f9fbe7
 ```
 
-### **Resource Usage by Implementation Phase**
-```mermaid
-gantt
-    title Data Governance Implementation Timeline
-    dateFormat X
-    axisFormat %d Days
-    
-    section Phase 1: Foundation
-    Assessment Tools           :a1, 0, 30d
-    Framework Templates        :a2, 15d, 45d
-    
-    section Phase 2: Design
-    Policy Development         :b1, 30d, 60d
-    Stakeholder Engagement     :b2, 45d, 75d
-    
-    section Phase 3: Implementation
-    Technical Setup            :c1, 60d, 90d
-    Training Rollout          :c2, 75d, 105d
-    
-    section Phase 4: Operations
-    Process Automation        :d1, 90d, 120d
-    Performance Monitoring    :d2, 105d, 150d
-```
-
----
-
-## 📊 **Implementation Workflow**
-
-```mermaid
-graph TD
-    A[📚 Read Book Chapter] --> B[📁 Access Repository Section]
-    B --> C[📝 Customize Templates]
-    C --> D[🔧 Implement Tools]
-    D --> E[📈 Measure Results]
-    E --> F[🔄 Iterate & Improve]
-    F --> A
-    
-    A --> G[💡 Understand Concepts]
-    B --> H[🛠️ Download Resources]
-    C --> I[🏢 Adapt to Organization]
-    D --> J[🚀 Deploy Solutions]
-    E --> K[📊 Track Performance]
-    F --> L[📈 Optimize Framework]
-    
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-    style F fill:#f1f8e9
-```
-
-### **Governance Maturity Progression**
 ```mermaid
 graph LR
-    A[🌱 Initial] --> B[🔄 Managed] 
+    A[🌱 Initial] --> B[🔄 Managed]
     B --> C[📋 Defined]
     C --> D[📊 Quantified]
     D --> E[🚀 Optimized]
-    
+
     A --> A1[Ad-hoc processes<br/>No formal governance]
     B --> B1[Basic policies<br/>Some standardization]
-    C --> C1[Documented procedures<br/>Clear roles/responsibilities]
+    C --> C1[Documented procedures<br/>Clear roles]
     D --> D1[Measured performance<br/>Data-driven decisions]
     E --> E1[Continuous improvement<br/>Strategic optimization]
-    
-    style A fill:#ffcdd2
-    style B fill:#fff3e0
-    style C fill:#e8f5e8
-    style D fill:#e3f2fd
-    style E fill:#f3e5f5
 ```
 
 ---
 
-## 🔗 **Additional Resources**
+## 🤝 Contributing
 
-- 📖 **Purchase the Book**: [Amazon Kindle/Paperback](https://www.amazon.com/dp/B0FPGF7S8R)
-- 🌐 **Author Website**: Coming Soon
-- 💼 **LinkedIn**: Connect with the author for governance insights
-- 📧 **Support**: Create an issue for template questions or customization help
-
----
-
-## 🤝 **Contributing Guidelines**
-
-We welcome contributions to improve templates, add case studies, or enhance automation scripts:
+We welcome contributions that improve or extend the templates, add case studies, or enhance automation scripts.
 
 1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/new-template`)
-3. **Commit** your changes (`git commit -m 'Add new governance template'`)
-4. **Push** to the branch (`git push origin feature/new-template`)
-5. **Create** a Pull Request
+2. **Create** a feature branch: `git checkout -b feature/your-contribution`
+3. **Commit** your changes: `git commit -m 'Add: description of contribution'`
+4. **Push**: `git push origin feature/your-contribution`
+5. **Open** a Pull Request with a clear description of what you added and why
 
-### **Contribution Areas**
-- 📝 Additional policy templates
-- 🔧 Enhanced automation scripts
-- 📊 New dashboard designs
-- 📚 Industry-specific case studies
-- 🌍 Localization for different regulations
-
----
-
-## 📜 **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-**Commercial Use**: Templates and tools are free for commercial use. Attribution appreciated but not required.
+**High-value contribution areas:**
+- Additional industry-specific case studies
+- Enhanced Python/SQL automation scripts
+- Translations of policy templates for non-US regulatory frameworks (e.g., PDPA, LGPD, PIPEDA)
+- Sector-specific RACI matrix variants (healthcare, financial services, public sector)
 
 ---
 
-## 🙌 **Acknowledgments**
+## 🔗 Additional Resources
+
+- 📖 **Purchase the Book**: [Amazon](https://www.amazon.com/dp/B0FPGF7S8R)
+- 🐛 **Report an Issue**: [GitHub Issues](https://github.com/JambaAcademy/Data_Governance/issues)
+- 💬 **Community Discussion**: [GitHub Discussions](https://github.com/JambaAcademy/Data_Governance/discussions)
+- 📚 **Wiki**: [GitHub Wiki](https://github.com/JambaAcademy/Data_Governance/wiki)
+
+---
+
+## 🙌 Acknowledgments
 
 - **Industry Partners**: Walgreens Boot Alliance, Healthcare Retroactive Audits, NEBA, Loxia Technologies
-- **Community Contributors**: Data governance professionals who shared real-world insights
-- **Regulatory Bodies**: GDPR, CCPA, HIPAA guidance and compliance frameworks
+- **Regulatory Bodies**: GDPR, CCPA, HIPAA, SOX guidance and compliance frameworks
 - **Technology Partners**: Collibra, Informatica, Talend, Microsoft Power BI
 
 ---
 
-## 📞 **Support & Community**
+## 📜 License
 
-- 🐛 **Bug Reports**: [Create an Issue](https://github.com/JambaAcademy/Data_Governance/issues)
-- 💡 **Feature Requests**: [Submit Enhancement Ideas](https://github.com/JambaAcademy/Data_Governance/issues)
-- 📚 **Documentation**: [Wiki Pages](https://github.com/JambaAcademy/Data_Governance/wiki)
-- 💬 **Discussions**: [Community Forum](https://github.com/JambaAcademy/Data_Governance/discussions)
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
----
-
-## 🏆 **Success Stories**
-
-Organizations using these frameworks have reported:
-
-| Metric | Average Improvement | Industry Range |
-|--------|-------------------|----------------|
-| 📉 **Data Quality Incidents** | 85% reduction | 70-95% |
-| ⚡ **Compliance Audit Time** | 60% faster | 45-75% |
-| 💰 **Annual Cost Savings** | $2.3M average | $1.2M-$4.8M |
-| 😊 **Stakeholder Satisfaction** | 95% rating | 90-98% |
-| 🚀 **Time to Insight** | 70% improvement | 50-85% |
-
-### **Implementation Success Factors**
-```mermaid
-mindmap
-  root((Data Governance Success))
-    Leadership Support
-      Executive Sponsorship
-      Resource Allocation
-      Strategic Alignment
-    Stakeholder Engagement
-      Cross-functional Teams
-      Clear Communication
-      Change Management
-    Technical Foundation
-      Quality Tools
-      Metadata Management
-      Integration Platform
-    Cultural Adoption
-      Training Programs
-      Incentive Alignment
-      Success Recognition
-```
-
-### **Technology Stack Integration**
-```mermaid
-graph TB
-    subgraph "📊 Analytics & BI Layer"
-        A1[Power BI] 
-        A2[Tableau]
-        A3[Qlik]
-    end
-    
-    subgraph "🗃️ Data Catalog & Governance"
-        B1[Collibra]
-        B2[Informatica EDC]
-        B3[Apache Atlas]
-    end
-    
-    subgraph "🔧 Data Quality & Integration"
-        C1[Informatica DQ]
-        C2[Talend]
-        C3[Apache Nifi]
-    end
-    
-    subgraph "🏗️ Data Storage Layer"
-        D1[Data Warehouse]
-        D2[Data Lake]
-        D3[Cloud Storage]
-    end
-    
-    A1 --> B1
-    A2 --> B2
-    A3 --> B3
-    B1 --> C1
-    B2 --> C2
-    B3 --> C3
-    C1 --> D1
-    C2 --> D2
-    C3 --> D3
-    
-    style A1 fill:#e3f2fd
-    style B1 fill:#f3e5f5
-    style C1 fill:#e8f5e8
-    style D1 fill:#fff3e0
-```
+Templates and tools are free for commercial use. Attribution appreciated but not required.
 
 ---
 
-**⭐ Star this repository if you find it valuable for your data governance journey!**
+**⭐ Star this repository if it helps your data governance journey.**
 
-*Last Updated: September 2025 | Repository actively maintained with emerging best practices*
+*Repository actively maintained. Last structure update: June 2026.*
