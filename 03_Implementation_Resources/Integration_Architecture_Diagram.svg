@@ -1,0 +1,104 @@
+<svg viewBox="0 0 1400 820" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5A5A6E"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="820" fill="#FFFFFF"/>
+
+  <text x="40" y="45" font-size="24" font-weight="bold" fill="#1F3864">Integration Architecture Diagram — Data Governance Platform</text>
+  <text x="40" y="70" font-size="13" fill="#5A5A6E">Reference architecture: source systems through governed consumption layer</text>
+
+  <!-- Layer labels -->
+  <text x="40" y="140" font-size="12" font-weight="bold" fill="#1F3864">SOURCE SYSTEMS</text>
+  <text x="40" y="330" font-size="12" font-weight="bold" fill="#1F3864">INGESTION &amp; INTEGRATION</text>
+  <text x="40" y="470" font-size="12" font-weight="bold" fill="#1F3864">STORAGE</text>
+  <text x="40" y="610" font-size="12" font-weight="bold" fill="#1F3864">GOVERNANCE &amp; QUALITY</text>
+  <text x="40" y="750" font-size="12" font-weight="bold" fill="#1F3864">CONSUMPTION</text>
+
+  <!-- Source systems row -->
+  <g font-size="13" fill="#1F3864">
+    <rect x="40" y="155" width="160" height="60" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="120" y="190" text-anchor="middle">CRM (Salesforce)</text>
+
+    <rect x="230" y="155" width="160" height="60" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="310" y="190" text-anchor="middle">ERP (SAP)</text>
+
+    <rect x="420" y="155" width="160" height="60" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="500" y="190" text-anchor="middle">HRIS (Workday)</text>
+
+    <rect x="610" y="155" width="160" height="60" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="690" y="182" text-anchor="middle">Operational</text>
+    <text x="690" y="198" text-anchor="middle">Databases</text>
+
+    <rect x="800" y="155" width="160" height="60" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="880" y="190" text-anchor="middle">Third-Party APIs</text>
+
+    <rect x="990" y="155" width="160" height="60" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="1070" y="182" text-anchor="middle">Flat Files /</text>
+    <text x="1070" y="198" text-anchor="middle">SFTP Feeds</text>
+  </g>
+
+  <!-- Ingestion layer -->
+  <rect x="160" y="345" width="900" height="60" rx="8" fill="#CADCFC" stroke="#1F3864"/>
+  <text x="610" y="368" text-anchor="middle" font-size="13" fill="#1F3864">Ingestion &amp; ETL/ELT Orchestration</text>
+  <text x="610" y="386" text-anchor="middle" font-size="11" fill="#3F5BD9">(Talend / Informatica / custom pipelines — see Data_Catalog_Setup_Scripts.sql)</text>
+
+  <!-- arrows source -> ingestion -->
+  <path d="M120,215 L120,300 Q120,345 320,345" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+  <path d="M310,215 L310,345" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+  <path d="M500,215 L500,345" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+  <path d="M690,215 L690,345" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+  <path d="M880,215 L880,300 Q880,345 700,345" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+  <path d="M1070,215 L1070,300 Q1070,345 880,345" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+
+  <!-- Storage layer -->
+  <rect x="160" y="480" width="420" height="70" rx="8" fill="#1F3864"/>
+  <text x="370" y="510" text-anchor="middle" font-size="13" fill="#FFFFFF">Data Warehouse</text>
+  <text x="370" y="530" text-anchor="middle" font-size="11" fill="#CADCFC">Curated, modeled tables</text>
+
+  <rect x="640" y="480" width="420" height="70" rx="8" fill="#1F3864"/>
+  <text x="850" y="510" text-anchor="middle" font-size="13" fill="#FFFFFF">Data Lake</text>
+  <text x="850" y="530" text-anchor="middle" font-size="11" fill="#CADCFC">Raw &amp; semi-structured data</text>
+
+  <path d="M610,405 L370,480" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+  <path d="M610,405 L850,480" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+
+  <!-- Governance layer -->
+  <rect x="160" y="625" width="900" height="70" rx="8" fill="#F4F6FC" stroke="#3F5BD9" stroke-width="2"/>
+  <text x="610" y="652" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F3864">Data Catalog · Quality Engine · Lineage Tracking · Access Controls</text>
+  <text x="610" y="670" text-anchor="middle" font-size="11" fill="#5A5A6E">Governance metadata layer — references data_assets, data_quality_rules, data_lineage tables</text>
+
+  <path d="M370,550 L370,625" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+  <path d="M850,550 L850,625" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+
+  <!-- Consumption layer -->
+  <g font-size="13" fill="#1F3864">
+    <rect x="160" y="755" width="180" height="50" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="250" y="785" text-anchor="middle">BI Dashboards</text>
+
+    <rect x="380" y="755" width="180" height="50" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="470" y="785" text-anchor="middle">Self-Service Analytics</text>
+
+    <rect x="600" y="755" width="180" height="50" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="690" y="785" text-anchor="middle">ML / Data Science</text>
+
+    <rect x="820" y="755" width="180" height="50" rx="8" fill="#E8ECFB" stroke="#1F3864"/>
+    <text x="910" y="785" text-anchor="middle">Operational Reporting</text>
+  </g>
+
+  <path d="M610,695 L250,755" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+  <path d="M610,695 L470,755" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+  <path d="M610,695 L690,755" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+  <path d="M610,695 L910,755" fill="none" stroke="#5A5A6E" marker-end="url(#arrow)"/>
+
+  <!-- legend -->
+  <rect x="1100" y="700" width="260" height="100" rx="6" fill="#FFFFFF" stroke="#DDE2F0"/>
+  <text x="1115" y="722" font-size="11" font-weight="bold" fill="#1F3864">Legend</text>
+  <rect x="1115" y="732" width="16" height="12" fill="#E8ECFB" stroke="#1F3864"/>
+  <text x="1138" y="742" font-size="10" fill="#5A5A6E">System / Application</text>
+  <rect x="1115" y="752" width="16" height="12" fill="#1F3864"/>
+  <text x="1138" y="762" font-size="10" fill="#5A5A6E">Storage Layer</text>
+  <rect x="1115" y="772" width="16" height="12" fill="#F4F6FC" stroke="#3F5BD9"/>
+  <text x="1138" y="782" font-size="10" fill="#5A5A6E">Governance Layer</text>
+</svg>
